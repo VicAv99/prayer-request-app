@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header fxLayout="row" fxLayoutAlign="center start">
+    <mat-card-title>
+      <h1>Request A Prayer:</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <hr>
+    <form>
+      <div fxLayout="column" fxLayoutAlign="space-around center">
+        <label>Prayer Type: </label>
+        <hr>
+        <div>
+          <mat-radio-group [(ngModel)]="currentRequest.type" name="type">
+            <mat-radio-button *ngFor="let type of types" [value]="type">{{type}}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <hr>
+        <div fxLayout="column">
+          <mat-form-field>
+            <mat-card-content>
+              <input matInput [(ngModel)]="currentRequest.date" placeholder="Date" type="date" name="date">
+            </mat-card-content>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-card-content>
+              <input matInput [(ngModel)]="currentRequest.name" placeholder="Name" type="text" name="name">
+            </mat-card-content>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-card-content>
+              <textarea matInput [(ngModel)]="currentRequest.message" placeholder="Please write message..." name="message"></textarea>
+            </mat-card-content>
+          </mat-form-field>
+        </div>
+        <mat-card-actions>
+          <button mat-button (click)="create(currentRequest)">Save</button>
+          <button mat-button (click)="resetPrayer(currentRequest)">Clear</button>
+        </mat-card-actions>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

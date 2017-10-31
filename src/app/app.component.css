@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+mat-toolbar {
+  z-index: 1;
+}
+
+.mat-sidenav-container {
+  flex: 1;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

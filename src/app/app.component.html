@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <button (click)="sidenav.toggle()" mat-raised-button color="accent"><mat-icon>menu</mat-icon></button>
+    <span fxLayout="row" fxLayoutAlign="space-around center">{{title}}</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over">
+        <nav>
+            <a mat-button
+               color="primary"
+               class="nav-link"
+               *ngFor="let link of links"
+               [routerLink]="link.path"
+               routerLinkActive="active">
+               <mat-icon color="accent">{{link.icon}}</mat-icon>
+               <span color="accent">{{link.label}}</span>            
+            </a>
+        </nav>
+    </mat-sidenav>
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+
