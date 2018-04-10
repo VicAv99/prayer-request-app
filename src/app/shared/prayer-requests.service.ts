@@ -9,7 +9,7 @@ const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 @Injectable()
 export class PrayerRequestsService {
 
-  
+
   constructor(private http: Http) { }
 
   allPrayerRequests() {
